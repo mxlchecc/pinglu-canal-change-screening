@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository supports audit and reproduction of the principal experiments reported in the revised manuscript, *Transformer-Based Change Detection for Construction Change Screening in Large Linear Infrastructure Corridors*. It contains source code, reviewed final configurations, complete training histories for the formal three-seed matrix, validation threshold records, final result tables, figure files/source tables, Pinglu metadata summaries, and environment records. These records allow the reported aggregate tables to be recomputed without downloading images or model weights. The trained checkpoint files are intended for separate distribution; their public download link is not yet available.
+This repository supports audit and reproduction of the principal experiments reported in the revised manuscript, *Transformer-Based Change Detection for Construction Change Screening in Large Linear Infrastructure Corridors*. It contains source code, reviewed final configurations, complete training histories for the formal three-seed matrix, validation threshold records, final result tables, figure files/source tables, Pinglu metadata summaries, and environment records. The reported aggregate tables can be recomputed from these records without downloading images or model weights. All 30 trained checkpoints are available separately in [release v1.0.0](https://github.com/mxlchecc/pinglu-canal-change-screening/releases/tag/v1.0.0).
 
 ## Package structure
 
@@ -14,7 +14,7 @@ This repository supports audit and reproduction of the principal experiments rep
 - `06_Figure_Source_Data`: 12 publishable figures and a 13-entry figure-to-source-data map. The archived project image is excluded with the restricted project data.
 - `07_Pinglu_Metadata`: Pinglu-only scene metadata and verified processing summaries.
 - `08_Environment`: software/hardware records, pretrained-snapshot metadata, checkpoint metadata, and execution coverage.
-- `09_Trained_Weights`: the manifest and colocated run/calibration records for all 30 formal checkpoints. The `best.pt` weight files are not included in this Git repository; see the weight availability notes below.
+- `09_Trained_Weights`: the manifest and colocated run/calibration records for all 30 formal checkpoints. Download the `best.pt` files from the release assets described below.
 
 ## Public benchmark and subset qualification
 
@@ -60,11 +60,18 @@ Original Gaofen imagery, processed Pinglu mosaics, and original project vector p
 
 ## Model weights
 
-The 30 formal checkpoints cover the two baselines and eight Mask2Former configurations for each of the three seeds. Their run records and `weight_manifest.csv` are included in `09_Trained_Weights`, but the `best.pt` files are not included. **Weight download: not yet publicly available.** A separate download link will be added when the weight archive has been deposited and verified.
+The 30 formal checkpoints cover the two baselines and eight Mask2Former configurations for each of the three seeds. Download them from [release v1.0.0](https://github.com/mxlchecc/pinglu-canal-change-screening/releases/tag/v1.0.0):
 
-The locally prepared checkpoint files contain trained tensors and documented primitive-valued configuration/selection metadata. Every state tensor is byte-identical to its original saved tensor; the manifest records the prepared file hash in `sha256` and the original saved checkpoint hash in `original_checkpoint_sha256`. Embedded architecture configurations allow offline initialization without downloading pretrained weights. Local checks of all 30 prepared files covered safe tensor loading, strict state-dictionary loading, parameter-count/epoch/seed consistency, and finite-output forward passes. These records document the local checks, not the availability of a public weight download.
+- [Seed 20260803 — 10 checkpoints](https://github.com/mxlchecc/pinglu-canal-change-screening/releases/download/v1.0.0/Trained_Weights_seed20260803.zip)
+- [Seed 20260804 — 10 checkpoints](https://github.com/mxlchecc/pinglu-canal-change-screening/releases/download/v1.0.0/Trained_Weights_seed20260804.zip)
+- [Seed 20260805 — 10 checkpoints](https://github.com/mxlchecc/pinglu-canal-change-screening/releases/download/v1.0.0/Trained_Weights_seed20260805.zip)
+- [Archive checksums — SHA256SUMS.txt](https://github.com/mxlchecc/pinglu-canal-change-screening/releases/download/v1.0.0/SHA256SUMS.txt)
 
-Before running checkpoint inspection, supplied-weight evaluation, or Pinglu inference, obtain the weight files through the separate download once available and place each `best.pt` at the repository-relative path recorded in the manifest's `weight_file` column. Compare the downloaded file's SHA-256 digest with the `sha256` column, not `original_checkpoint_sha256`. Detailed placement and verification notes are provided in [`09_Trained_Weights/README.md`](09_Trained_Weights/README.md).
+Each ZIP is an independent archive, not a split volume; download all three for the complete 30-checkpoint matrix. Verify their hashes against `SHA256SUMS.txt`, then extract each archive directly into the repository root, preserving its internal paths. The files should land in `09_Trained_Weights/<run_name>/best.pt`, without an extra archive-name folder. GitHub's automatically generated **Source code (zip)** and **Source code (tar.gz)** archives contain the repository files, not the weight binaries; obtain the weights from the three named release assets above.
+
+The distributed checkpoint files contain trained tensors and documented primitive-valued configuration/selection metadata. Every state tensor is byte-identical to its original saved tensor; the manifest records the distribution file hash in `sha256` and the original saved checkpoint hash in `original_checkpoint_sha256`. Embedded architecture configurations allow offline initialization without downloading pretrained weights. Local checks of all 30 prepared files covered safe tensor loading, strict state-dictionary loading, parameter-count/epoch/seed consistency, and finite-output forward passes.
+
+The manifest's `weight_file` column gives each checkpoint's repository-relative path. For individual-file verification, compare its SHA-256 digest with the `sha256` column, not `original_checkpoint_sha256`. Detailed placement and verification notes are provided in [`09_Trained_Weights/README.md`](09_Trained_Weights/README.md).
 
 The prepared weights were selected on fixed-threshold validation F1, and each colocated threshold record contains the separately validation-selected probability threshold. Do not choose a new threshold on the test set. `mask2former_difference_swap_seed...` is the selected Mask2Former configuration.
 
@@ -95,9 +102,9 @@ python 01_Source_Code/scripts/verify_release.py
 
 `verify_release.py` validates the files listed in this Git repository's `checksums.sha256`. That manifest covers the deposited code, documentation, and evidence files, not separately distributed checkpoint binaries or newly generated outputs.
 
-### Inspect weights after obtaining the separate download
+### Inspect the downloaded weights
 
-This step requires all 30 `best.pt` files to be present at the paths recorded in `09_Trained_Weights/weight_manifest.csv`. It cannot run from the Git repository alone while the weight download is unavailable. Verify each downloaded file against the manifest's `sha256` column before loading it, then run:
+After extracting and verifying all three weight archives, run:
 
 ```console
 python 01_Source_Code/scripts/check_weights.py --device cpu
@@ -113,9 +120,9 @@ python 01_Source_Code/scripts/download_sysu.py data/SYSU_CD_HF
 
 The pinned public mirror is `ericyu/SYSU_CD`, revision `fa1aa2f7a050b015a03417b2ac45c34506c031b8`. The data loader expects `train-*.parquet`, `val-*.parquet`, and `test-*.parquet` under `data/SYSU_CD_HF/data`. If the files are elsewhere, edit `data.sysu_root` in `02_Final_Experiment_Configs/runtime_config.yaml`; relative paths resolve from the package root. The released-subset lineage limitation stated above still applies.
 
-### Evaluate models after obtaining the separate weights
+### Evaluate the downloaded models
 
-The following example requires the benchmark download and `09_Trained_Weights/mask2former_difference_swap_seed20260803/best.pt`. It is not runnable from the Git repository alone until the separate weight file has been obtained.
+The following example requires the benchmark download and `09_Trained_Weights/mask2former_difference_swap_seed20260803/best.pt` from the seed 20260803 archive:
 
 ```console
 python 01_Source_Code/scripts/evaluate.py 09_Trained_Weights/mask2former_difference_swap_seed20260803/best.pt --config 02_Final_Experiment_Configs/runtime_config.yaml --split test --resolutions 0.5 --output outputs/mask2former_seed20260803_test.csv
@@ -141,7 +148,7 @@ This invokes `train.py` and validation-only threshold calibration for all 30 for
 
 ### Pinglu application with authorized project inputs
 
-This step requires both the authorized project inputs and the nine selected-family checkpoint files from the separate weight distribution. Recomputing the tables alone does not supply those weight files.
+This step requires the authorized project inputs and the nine selected-family checkpoints from the three weight archives.
 
 ```console
 python 01_Source_Code/scripts/prepare_pinglu_tiles.py restricted_data/mosaic_a restricted_data/mosaic_b restricted_data/corridor_boundary.shp outputs/pinglu_tiles
@@ -152,6 +159,6 @@ The first command creates the tile manifest/profile from the authorized mosaics 
 
 ## Interpretation and publication status
 
-The three controlled model families have close benchmark scores; these materials do not establish a statistically reliable model ranking. Resolution degradation and image translation are controlled perturbation experiments, not target-domain accuracy validation. Pinglu outputs remain candidate-change screening layers. This repository contains the code and supporting result records. Public distribution of the checkpoint binaries remains pending, and no weight-download URL or archive DOI is claimed here.
+The three controlled model families have close benchmark scores; these materials do not establish a statistically reliable model ranking. Resolution degradation and image translation are controlled perturbation experiments, not target-domain accuracy validation. Pinglu outputs remain candidate-change screening layers. The code and supporting result records are available in this repository, and all 30 checkpoint binaries are available in [release v1.0.0](https://github.com/mxlchecc/pinglu-canal-change-screening/releases/tag/v1.0.0).
 
 Use `checksums.sha256` to verify the listed repository files and `09_Trained_Weights/weight_manifest.csv` to verify separately obtained checkpoint files. The original scene rasters, mosaics, and project vectors are excluded. The upstream model/data identifiers are documented for provenance; users must observe their respective access and reuse terms. No open-source license is assigned to the authors' code in this repository; reuse permissions must be confirmed with the rights holders.
