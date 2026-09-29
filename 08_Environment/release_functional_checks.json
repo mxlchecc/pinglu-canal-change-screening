@@ -1,0 +1,59 @@
+{
+  "cli_checks": [
+    {
+      "entry_point": "train.py",
+      "help_exit_code": 0
+    },
+    {
+      "entry_point": "evaluate.py",
+      "help_exit_code": 0
+    },
+    {
+      "entry_point": "calibrate_threshold.py",
+      "help_exit_code": 0
+    },
+    {
+      "entry_point": "run_multiseed_matrix.py",
+      "help_exit_code": 0
+    },
+    {
+      "entry_point": "run_pinglu_multiseed_application.py",
+      "help_exit_code": 0
+    },
+    {
+      "entry_point": "evaluate_registration_perturbation.py",
+      "help_exit_code": 0
+    },
+    {
+      "entry_point": "run_selected_robustness.py",
+      "help_exit_code": 0
+    }
+  ],
+  "aggregate_tables_equal_to_recorded": true,
+  "selected_variant": "difference_swap",
+  "evaluation_checks": [
+    {
+      "run_name": "segformer_seed20260803",
+      "public_images": 2,
+      "device": "cuda",
+      "cli_evaluation": "passed",
+      "use": "Functional input/output check only; not a new accuracy experiment"
+    },
+    {
+      "run_name": "swin_upernet_seed20260803",
+      "public_images": 2,
+      "device": "cuda",
+      "cli_evaluation": "passed",
+      "use": "Functional input/output check only; not a new accuracy experiment"
+    },
+    {
+      "run_name": "mask2former_difference_swap_seed20260803",
+      "public_images": 2,
+      "device": "cuda",
+      "cli_evaluation": "passed",
+      "use": "Functional input/output check only; not a new accuracy experiment"
+    }
+  ],
+  "full_benchmark_rerun": false,
+  "project_application_rerun": false
+}

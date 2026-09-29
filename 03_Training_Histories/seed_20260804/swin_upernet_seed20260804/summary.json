@@ -1,0 +1,8 @@
+{
+  "run_name": "swin_upernet_seed20260804",
+  "best_epoch": 9,
+  "best_validation_f1": 0.7937092197068871,
+  "global_optimizer_steps": 9750,
+  "parameters_total": 59832510,
+  "parameters_trainable": 59832510
+}

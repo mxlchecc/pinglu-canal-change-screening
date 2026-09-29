@@ -1,0 +1,22 @@
+{
+  "run_name": "swin_upernet_seed20260803",
+  "family": "swin_upernet",
+  "seed": 20260803,
+  "epoch": 12,
+  "validation_threshold": 0.45,
+  "parameters_total": 59832510,
+  "weight_file": "09_Trained_Weights/swin_upernet_seed20260803/best.pt",
+  "weight_bytes": 239723649,
+  "sha256": "fcdabc555e821e2e612fcbb0ccae021f85aded59362cce1f65e938aad4bf351a",
+  "original_checkpoint_sha256": "e3bd3950e1d16bdf836a873a3810c11198da631266a556ab2bfaf7b9dba40ec9",
+  "state_tensor_sha256": "68a512981ebd1f4e4cdea9002cc35acc309272d91c63665f543acac262601f3c",
+  "state_dict_keys": 319,
+  "weights_only_load": "passed",
+  "strict_state_dict_load": "passed",
+  "finite_tensors": "passed",
+  "forward_shape": "1x2x256x256",
+  "forward_finite": "passed",
+  "forward_device": "cuda",
+  "upstream_checkpoint": "openmmlab/upernet-swin-tiny",
+  "upstream_revision": "dc8e8c94669c6f14d5cc4c21a141daebd2280d59"
+}

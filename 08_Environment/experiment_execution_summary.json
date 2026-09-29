@@ -1,0 +1,23 @@
+{
+  "formal_seeds": [
+    20260803,
+    20260804,
+    20260805
+  ],
+  "formal_configurations": 10,
+  "formal_runs": 30,
+  "runs_per_seed": {
+    "20260803": 10,
+    "20260804": 10,
+    "20260805": 10
+  },
+  "configuration_families": {
+    "SegFormer-B0": 1,
+    "Swin-Tiny-UPerNet": 1,
+    "Mask2Former-Swin-Tiny factorial configurations": 8
+  },
+  "reporting": "mean and sample standard deviation across three independent runs",
+  "history_records_complete": true,
+  "validation_threshold_records_complete": true,
+  "separate_convergence_audit": "SegFormer-B0 seed 20260803 with a 25-epoch ceiling"
+}

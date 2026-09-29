@@ -1,0 +1,4 @@
+﻿model_a,model_b,intersection,union,candidate_iou
+SegFormer-B0,Swin-Tiny-UPerNet,4126152,6026926,0.6846196551940409
+SegFormer-B0,Mask2Former (Difference + swap),3945913,6121295,0.6446206235772006
+Swin-Tiny-UPerNet,Mask2Former (Difference + swap),4271637,5881693,0.7262597690834934

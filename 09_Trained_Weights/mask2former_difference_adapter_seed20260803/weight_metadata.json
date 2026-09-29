@@ -1,0 +1,22 @@
+{
+  "run_name": "mask2former_difference_adapter_seed20260803",
+  "family": "mask2former_cd",
+  "seed": 20260803,
+  "epoch": 6,
+  "validation_threshold": 0.45,
+  "parameters_total": 47406367,
+  "weight_file": "09_Trained_Weights/mask2former_difference_adapter_seed20260803/best.pt",
+  "weight_bytes": 190141511,
+  "sha256": "d937aca8a72f41c76be69abe215a21a26bc22a4b9ee8bcbce9687561f04547ff",
+  "original_checkpoint_sha256": "d9b8d00b69aad2242ea683a46df5130f7e5003040fe042de3dc15cecc463f17f",
+  "state_tensor_sha256": "afa4951f45ab76adf8cfbd5b25b70288c824d53824fa2ab73cce04a0c34ec622",
+  "state_dict_keys": 572,
+  "weights_only_load": "passed",
+  "strict_state_dict_load": "passed",
+  "finite_tensors": "passed",
+  "forward_shape": "1x2x256x256",
+  "forward_finite": "passed",
+  "forward_device": "cuda",
+  "upstream_checkpoint": "facebook/mask2former-swin-tiny-ade-semantic",
+  "upstream_revision": "c8cf1b5e823aee214d937d0d001c1850ba44ef6a"
+}

@@ -1,0 +1,4 @@
+﻿model,family_threshold,implementation
+SegFormer-B0,0.583,"mean seed probabilities, then apply the mean of the three validation-selected seed thresholds"
+Swin-Tiny-UPerNet,0.533,"mean seed probabilities, then apply the mean of the three validation-selected seed thresholds"
+Mask2Former (Difference + swap),0.583,"mean seed probabilities, then apply the mean of the three validation-selected seed thresholds"

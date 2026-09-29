@@ -1,0 +1,15 @@
+{
+  "model": "mask2former_factorial",
+  "checkpoint_family": "facebook/mask2former-swin-tiny-ade-semantic",
+  "pretrained_revision": "c8cf1b5e823aee214d937d0d001c1850ba44ef6a",
+  "input_channels": 6,
+  "output_classes": 2,
+  "full_weight_tensor_in_package": true,
+  "factorial_components": [
+    "absolute-difference fusion",
+    "residual resolution adapter",
+    "temporal-swap consistency"
+  ],
+  "selected_configuration": "Difference + swap",
+  "selected_uses_resolution_adapter": false
+}

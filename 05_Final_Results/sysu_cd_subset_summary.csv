@@ -1,0 +1,4 @@
+﻿subset,released_patch_pairs,changed_pixels,unchanged_pixels,changed_percent,source_ids_in_local_mirror,publication_reported_source_level_split
+Training,12000,167833309,618598691,21.341,Not available,6:2:2
+Validation,4000,56437798,205706202,21.529,Not available,6:2:2
+Test,4000,61820917,200323083,23.583,Not available,6:2:2

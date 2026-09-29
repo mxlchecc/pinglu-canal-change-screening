@@ -1,0 +1,9 @@
+{
+  "recorded_on": "2026-08-03",
+  "models": {
+    "nvidia/segformer-b0-finetuned-ade-512-512": "489d5cd81a0b59fab9b7ea758d3548ebe99677da",
+    "openmmlab/upernet-swin-tiny": "dc8e8c94669c6f14d5cc4c21a141daebd2280d59",
+    "facebook/mask2former-swin-tiny-ade-semantic": "c8cf1b5e823aee214d937d0d001c1850ba44ef6a"
+  },
+  "note": "Commit identifiers were read from the local Hugging Face cache refs used by the recorded experiments and are pinned in the delivered configuration."
+}

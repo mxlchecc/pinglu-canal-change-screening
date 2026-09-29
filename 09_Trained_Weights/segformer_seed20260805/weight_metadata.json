@@ -1,0 +1,22 @@
+{
+  "run_name": "segformer_seed20260805",
+  "family": "segformer",
+  "seed": 20260805,
+  "epoch": 10,
+  "validation_threshold": 0.55,
+  "parameters_total": 3719362,
+  "weight_file": "09_Trained_Weights/segformer_seed20260805/best.pt",
+  "weight_bytes": 14951775,
+  "sha256": "a85eec39c2f561ff4d1da4a227b0d956a7b90a787b615fbcf6df810c62cf8462",
+  "original_checkpoint_sha256": "ac06911a0118c0683942339065c70f270776d31a3f42d59dcb53d5a72072ef4c",
+  "state_tensor_sha256": "25e631aa55e40e409edd6ed676e279bbfab1b8b23ff80551afe5d51a2bfd2f31",
+  "state_dict_keys": 208,
+  "weights_only_load": "passed",
+  "strict_state_dict_load": "passed",
+  "finite_tensors": "passed",
+  "forward_shape": "1x2x256x256",
+  "forward_finite": "passed",
+  "forward_device": "cuda",
+  "upstream_checkpoint": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "upstream_revision": "489d5cd81a0b59fab9b7ea758d3548ebe99677da"
+}

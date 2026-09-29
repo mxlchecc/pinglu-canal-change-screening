@@ -1,0 +1,9 @@
+﻿variant,difference_fusion,resolution_adapter,temporal_swap_consistency,n_seeds,validation_f1_mean_pct,validation_f1_sample_sd_pct,test_f1_mean_pct,test_f1_sample_sd_pct,selected_by_mean_validation_f1
+adapter_only,False,True,False,3,79.6433,0.2575,81.8642,0.9335,False
+adapter_swap,False,True,True,3,79.8133,0.2365,82.2950,0.2792,False
+base,False,False,False,3,79.7948,0.2543,81.8955,0.3283,False
+difference_adapter,True,True,False,3,79.9762,0.1307,82.5507,0.4175,False
+difference_only,True,False,False,3,80.2466,0.1619,82.6809,0.2655,False
+difference_swap,True,False,True,3,80.3259,0.2912,82.4315,0.5907,True
+full,True,True,True,3,79.9645,0.1292,82.7187,0.6952,False
+swap_only,False,False,True,3,80.0850,0.4395,82.3204,0.6992,False

@@ -1,0 +1,8 @@
+{
+  "model": "segformer",
+  "checkpoint_family": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "pretrained_revision": "489d5cd81a0b59fab9b7ea758d3548ebe99677da",
+  "input_channels": 6,
+  "output_classes": 2,
+  "full_weight_tensor_in_package": true
+}

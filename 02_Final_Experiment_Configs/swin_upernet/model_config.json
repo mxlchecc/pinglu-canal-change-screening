@@ -1,0 +1,8 @@
+{
+  "model": "swin_upernet",
+  "checkpoint_family": "openmmlab/upernet-swin-tiny",
+  "pretrained_revision": "dc8e8c94669c6f14d5cc4c21a141daebd2280d59",
+  "input_channels": 6,
+  "output_classes": 2,
+  "full_weight_tensor_in_package": true
+}

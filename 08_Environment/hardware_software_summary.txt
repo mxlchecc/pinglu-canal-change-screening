@@ -1,0 +1,11 @@
+Hardware and software summary
+
+GPU: NVIDIA GeForce RTX 4060 Ti, 16 GB
+Operating system: Windows
+Python: 3.12
+PyTorch: 2.11.0
+CUDA: 12.8
+Transformers: 4.57.6
+Mixed precision: enabled
+Formal seeds: 20260803, 20260804, 20260805
+Aggregate reporting: mean and sample standard deviation across three independent runs

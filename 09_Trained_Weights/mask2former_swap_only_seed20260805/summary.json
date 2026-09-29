@@ -1,0 +1,8 @@
+{
+  "run_name": "mask2former_swap_only_seed20260805",
+  "best_epoch": 5,
+  "best_validation_f1": 0.803056419580799,
+  "global_optimizer_steps": 6739,
+  "parameters_total": 47406205,
+  "parameters_trainable": 47406205
+}

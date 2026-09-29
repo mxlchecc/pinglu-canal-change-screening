@@ -1,0 +1,8 @@
+﻿item,verified_information,processing_or_use,qualification
+Archived candidate sources,25 unique Pinglu scene packages; 68 XML metadata records,file and metadata provenance audit,no formal scene-to-mosaic lineage table
+Acquisition dates,2021-09-11/10-12/11-28; 2022-07-28/09-05; 2024-05-14; 2025-01-19/03-26/05-22,filename dates checked against XML,folder names not used as date evidence
+Sensors,GF-1 PMS1/PMS2; GF-6 PMS,source-scene inventory,Level-1A metadata retained
+Source GSD fields,"GF-1: 2 m PAN, 8 m MSS; GF-6 records: 2 m and 8 m",metadata reporting only,not asserted as processed-mosaic lineage
+Processed mosaics,A: 2.3 m grid; B: 2.2 m source grid,B warped to A; EPSG:32649,"A/B are file identifiers, not asserted chronology"
+Input,bands 3/2/1 (RGB) from both mosaics,independent 2nd-98th percentile stretch,six-channel paired tensor
+Corridor tiling,256 x 256; 646 contextual tiles,205-pixel stride; 20% context,core pixels written once

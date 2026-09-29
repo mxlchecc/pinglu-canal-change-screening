@@ -1,0 +1,12 @@
+{
+  "purpose": "Convergence-sensitivity audit; not substituted into the common 15-epoch comparison",
+  "model": "SegFormer-B0",
+  "seed": 20260803,
+  "epoch_ceiling": 25,
+  "epochs_completed": 13,
+  "early_stopping_patience": 4,
+  "best_epoch": 9,
+  "selected_threshold": 0.55,
+  "validation_f1_at_selected_threshold": 0.7832506983784425,
+  "held_out_test_f1": 0.8217789915583213
+}

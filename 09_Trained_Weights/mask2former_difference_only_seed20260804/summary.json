@@ -1,0 +1,8 @@
+{
+  "run_name": "mask2former_difference_only_seed20260804",
+  "best_epoch": 8,
+  "best_validation_f1": 0.8005981075148916,
+  "global_optimizer_steps": 8991,
+  "parameters_total": 47406265,
+  "parameters_trainable": 47406265
+}

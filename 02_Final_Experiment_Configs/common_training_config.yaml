@@ -1,0 +1,49 @@
+project:
+  name: pinglu_change_detection_revision
+  seeds:
+  - 20260803
+  - 20260804
+  - 20260805
+data:
+  dataset: SYSU-CD
+  sysu_root: ${SYSU_CD_ROOT}
+  released_patch_pairs:
+    train: 12000
+    validation: 4000
+    test: 4000
+  publication_reported_source_level_split: '6:2:2'
+  source_ids_in_local_mirror: Not available
+  image_size: 256
+  num_classes: 2
+  input: RGB(t1) + RGB(t2), concatenated to six channels
+  degradation_scales_m:
+  - 0.5
+  - 0.8
+  - 2.0
+  - 2.3
+training:
+  epochs: 15
+  batch_size: 16
+  gradient_accumulation: 1
+  num_workers: 4
+  learning_rate: 6.0e-05
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  schedule: cosine decay
+  amp: true
+  early_stopping_patience: 4
+  monitor: validation F1 at threshold 0.50
+  loss:
+    weighted_cross_entropy: 1.0
+    dice: 1.0
+    changed_class_weight: 3.0
+pinglu:
+  mosaic_a: ${RESTRICTED_PINGLU_DATA}/mosaic_a
+  mosaic_b: ${RESTRICTED_PINGLU_DATA}/mosaic_b
+  corridor_shapefile: ${RESTRICTED_PINGLU_DATA}/corridor_boundary.shp
+  tile_size: 256
+  stride_pixels: 205
+  contextual_overlap_fraction: 0.2
+  chronology: A/B chronology unresolved; inference is averaged over both input orders
+output:
+  root: ${OUTPUT_ROOT}

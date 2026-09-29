@@ -1,0 +1,13 @@
+family,variant,actual,predicted,n_seeds,test_proportion_mean,test_proportion_std
+segformer,segformer,unchanged,unchanged,3,0.9387015857112516,0.0023924715804807565
+segformer,segformer,unchanged,changed,3,0.06129841428874841,0.0023924715804807726
+segformer,segformer,changed,unchanged,3,0.16492087405734643,0.005069412165728771
+segformer,segformer,changed,changed,3,0.8350791259426535,0.0050694121657287984
+swin_upernet,swin_upernet,unchanged,unchanged,3,0.9421487770666283,0.00396763330922942
+swin_upernet,swin_upernet,unchanged,changed,3,0.05785122293337175,0.003967633309229425
+swin_upernet,swin_upernet,changed,unchanged,3,0.1793977541075081,0.003928883905602407
+swin_upernet,swin_upernet,changed,changed,3,0.8206022458924919,0.003928883905602384
+mask2former,difference_swap,unchanged,unchanged,3,0.9430881562460778,0.0019422404583366885
+mask2former,difference_swap,unchanged,changed,3,0.056911843753922255,0.0019422404583366978
+mask2former,difference_swap,changed,unchanged,3,0.16955122163587447,0.008272168918582741
+mask2former,difference_swap,changed,changed,3,0.8304487783641256,0.008272168918582741

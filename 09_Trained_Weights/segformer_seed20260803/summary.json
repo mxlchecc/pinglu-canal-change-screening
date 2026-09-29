@@ -1,0 +1,8 @@
+{
+  "run_name": "segformer_seed20260803",
+  "best_epoch": 15,
+  "best_validation_f1": 0.7832429974537414,
+  "global_optimizer_steps": 11250,
+  "parameters_total": 3719362,
+  "parameters_trainable": 3719362
+}

@@ -1,0 +1,57 @@
+project:
+  name: pinglu_change_screening
+  seeds:
+  - 20260803
+  - 20260804
+  - 20260805
+data:
+  sysu_root: data/SYSU_CD_HF/data
+  image_size: 256
+  num_classes: 2
+  degradation_scales_m:
+  - 0.5
+  - 0.8
+  - 2.0
+  - 2.3
+training:
+  epochs: 15
+  batch_size: 16
+  gradient_accumulation: 1
+  num_workers: 4
+  learning_rate: 6.0e-05
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  amp: true
+  early_stopping_patience: 4
+  monitor: f1
+  seeds:
+  - 20260803
+  - 20260804
+  - 20260805
+  loss:
+    cross_entropy_weight: 1.0
+    dice_weight: 1.0
+    change_class_weight: 3.0
+models:
+  segformer:
+    checkpoint: nvidia/segformer-b0-finetuned-ade-512-512
+    revision: 489d5cd81a0b59fab9b7ea758d3548ebe99677da
+  swin_upernet:
+    checkpoint: openmmlab/upernet-swin-tiny
+    revision: dc8e8c94669c6f14d5cc4c21a141daebd2280d59
+  mask2former_cd:
+    checkpoint: facebook/mask2former-swin-tiny-ade-semantic
+    revision: c8cf1b5e823aee214d937d0d001c1850ba44ef6a
+    use_difference_fusion: true
+    use_resolution_adapter: true
+    temporal_swap_consistency_weight: 0.1
+pinglu:
+  mosaic_a: restricted_data/mosaic_a
+  mosaic_b: restricted_data/mosaic_b
+  corridor_shapefile: restricted_data/corridor_boundary.shp
+  tile_size: 256
+  overlap_fraction: 0.2
+  batch_size: 4
+  candidate_threshold: 0.5
+output:
+  root: outputs/experiments_multiseed

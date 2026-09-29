@@ -1,0 +1,14 @@
+﻿figure,file,source_data
+1,scene_footprints.png,../07_Pinglu_Metadata/pinglu_scene_metadata.csv
+2,workflow.png,../02_Final_Experiment_Configs/common_training_config.yaml
+3,improved_mask2former_architecture.png,../02_Final_Experiment_Configs/mask2former_factorial/model_config.json
+4,multiseed_training_curves.png,../03_Training_Histories/
+5,multiseed_model_comparison.png,../05_Final_Results/main_model_comparison.csv
+6,selected_confusion_matrices.png,../05_Final_Results/confusion_matrix_summary.csv
+7,public_test_predictions_multiseed.png,../05_Final_Results/per_seed_results.csv
+8,public_test_error_maps.png,../05_Final_Results/per_seed_results.csv
+9,mask2former_ablation_8combo.png,../05_Final_Results/factorial_ablation.csv
+10,multiseed_robustness.png,../05_Final_Results/resolution_robustness.csv; ../05_Final_Results/registration_robustness.csv
+11,pinglu_candidates_multiseed.png,../05_Final_Results/pinglu_candidate_area_summary.csv
+12,pinglu_sensitivity_multiseed.png,../05_Final_Results/pinglu_threshold_sensitivity.csv; ../05_Final_Results/pinglu_pairwise_agreement.csv
+13,archived_project_sequences.jpg,derived manuscript figure; original project imagery is restricted

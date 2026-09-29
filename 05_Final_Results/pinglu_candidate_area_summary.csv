@@ -1,0 +1,6 @@
+﻿output,threshold,area_ha,valid_corridor_pct
+SegFormer-B0,0.583,2662.71,53.29
+Swin-Tiny-UPerNet,0.533,2708.27,54.20
+Mask2Former (Difference + swap),0.583,2662.84,53.29
+At least two-model agreement,model-specific,2768.94,55.41
+Three-model agreement,model-specific,1880.44,37.63

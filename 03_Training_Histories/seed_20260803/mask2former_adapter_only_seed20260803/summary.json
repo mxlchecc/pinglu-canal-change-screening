@@ -1,0 +1,8 @@
+{
+  "run_name": "mask2former_adapter_only_seed20260803",
+  "best_epoch": 4,
+  "best_validation_f1": 0.7973192223041752,
+  "global_optimizer_steps": 5991,
+  "parameters_total": 47406307,
+  "parameters_trainable": 47406307
+}
